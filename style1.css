@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Joan&family=Junge&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  font-family: 'Joan', serif;
+  background-image: url(imagens/palco.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: top center;
+  background-attachment: fixed;
+  overflow: hidden;
+}
+
+.palco {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+}
+
+.cortina {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background-image: url(imagens/cortina.png);
+  background-size: cover;
+  z-index: 2;
+  transition: transform 0.8s ease-in-out;
+}
+
+.cortina.esquerda {
+  left: 0;
+  transform: translateX(0);
+}
+
+.cortina.direita {
+  right: 0;
+  transform: scaleX(-1) translateX(0);
+}
+
+.palco.abrir .cortina.esquerda {
+  transform: translateX(-100%);
+}
+
+.palco.abrir .cortina.direita {
+  transform: scaleX(-1) translateX(-100%);
+}
+
+.conteudo {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.8s ease-in-out 0.5s;
+}
+
+.palco.abrir .conteudo {
+  opacity: 1;
+}
+
+.titulo {
+  font-size: 5rem;
+  font-weight: bold;
+  color: #4d000a;
+    text-shadow: 0 0, 0 0 2px #fff, 0 0 8px #fff, 0 0 14px #cc040e, 0 0 20px #cc040e;
+}
+
+.titulo2 {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #4d000a;
+    text-shadow: 0 0, 0 0 2px #fff, 0 0 8px #fff, 0 0 14px #cc040e, 0 0 20px #cc040e;
+}
+
+#lista {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #4d000a;
+  text-decoration: none;
+}
+
+
+#subtitulo {
+  font-size: 2.8rem;
+  margin-top: 10px;
+  color: #660005;
+  font-style: italic;
+  text-decoration: underline;
+}
+
+.menu-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  padding: 1rem 0;
+}
+
+.menu-footer .nav {
+  display: flex;
+  justify-content: center;
+}
+
+.nav-bar {
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-bar a {
+  color: #ffffff;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: color 0.3s;
+}
+
+.nav-bar a:hover {
+  color: #cc0000;
+}
+
+.fade-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7); /* escurece o palco */
+  z-index: 1;
+  opacity: 1;
+  transition: opacity 1s ease-in-out 0.5s;
+}
+
+.palco.abrir .fade-layer {
+  opacity: 0;
+}
+
+.caixa-texto {
+  width: 780px; 
+  height: 400px; 
+  overflow-y: auto; 
+  border-radius: 10px;
+}
+
+#texto {
+  text-align: justify;
+  font-size: 1.4rem;
+}
+
+td {
+  padding: 20px;
+}
+

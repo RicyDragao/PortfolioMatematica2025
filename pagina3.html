@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Portfólio de Matemática 2025</title>
+  <link rel="stylesheet" href="style1.css" />
+  <link rel="shortcut icon" type="image/png" href="Imagens/icone.png">
+
+</head>
+<body>
+  <div class="palco" id="palco">
+    <div class="cortina esquerda"></div>
+    <div class="cortina direita"></div>
+<div class="fade-layer"></div>
+    <div class="conteudo" id="texto">
+        <table>
+            <tr>
+                <td>
+                    <img src="imagens/media-moda-mediana-matematica.webp" width="195px" height="420px">
+                </td>
+                <td>
+                    <div class="caixa-texto">
+    <p>Média: é a soma de todos os valores dividida pela quantidade de valores. Representa o "valor médio" de um conjunto de dados.
+Exemplo: (2 + 4 + 6) ÷ 3 = 4 é a média.
+<br>
+<br>
+Mediana: é o valor que fica no meio quando os dados estão organizados em ordem crescente. Se houver número par de valores, é a média dos dois centrais.
+Exemplo: em 3, 5, 8 → 5 é a mediana.
+<br>
+<br>
+Moda: é o valor que mais se repete no conjunto. Pode haver mais de uma moda ou nenhuma.
+Exemplo: em 2, 3, 3, 4, 5 → 3 é a moda.
+<br>
+<br>
+Amplitude total: é a diferença entre o maior e o menor valor de um conjunto de dados. Mostra o quanto os dados estão espalhados.
+Exemplo: em 3, 7, 10, 12, 15 → 15 − 3 = 12 é a amplitude total.</p>
+    </div>
+                </td>
+            </tr>
+        </table>
+      
+    </div>
+  </div>
+
+  <footer class="menu-footer">
+    <section class="nav">
+      <nav class="nav-bar">
+        <a href="pagina4.html" id="proximaCena">Próxima Cena</a>
+      </nav>
+    </section>
+  </footer>
+
+<script>
+  const palco = document.getElementById("palco");
+  const botaoProximaCena = document.getElementById("proximaCena");
+  setTimeout(() => {
+    palco.classList.add("abrir");
+  }, 500);
+  if (botaoProximaCena) {
+    botaoProximaCena.addEventListener("click", (e) => {
+      e.preventDefault(); 
+      const destino = botaoProximaCena.getAttribute("href");
+      palco.classList.remove("abrir");
+      setTimeout(() => {
+        window.location.href = destino;
+      }, 500);
+    });
+  }
+</script>
+</body>
+</html>
+
